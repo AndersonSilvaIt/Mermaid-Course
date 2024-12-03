@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Inreactive Mermaid Flowchart</title>
+    </head>
+
+    <body>
+        <pre class="mermaid">
+            flowchart
+                A([start click])-->B((github))-->C & D -->F([Google.com])
+
+                click A startclick "start clicking here"
+                click B "https://www.github.com" "Goto Github" _blank
+                click F call clickmsg('Going to Google') "Click to browse Google"
+                click D call clickmsg('Going to Youtube') "Click to browse Youtube"
+        </pre>
+
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs'
+
+            const config = {
+                startOnload : true,
+                securityLevel: 'loose',
+            }
+
+            mermaid.initialize(config);
+        </script>
+
+        <script>
+            function startclick(){
+                alert('Ola')
+            }
+
+            function clickmsg(msg){
+                alert(msg)
+            }
+        </script>
+    </body>
+</html>
